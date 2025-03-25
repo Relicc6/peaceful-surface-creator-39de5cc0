@@ -9,6 +9,56 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      applications: {
+        Row: {
+          applicant_id: string | null
+          created_at: string | null
+          employer_id: string | null
+          id: string
+          last_message: string | null
+          last_message_at: string | null
+          learner_id: string | null
+          project_id: string | null
+          status: string | null
+          unread_count: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          applicant_id?: string | null
+          created_at?: string | null
+          employer_id?: string | null
+          id?: string
+          last_message?: string | null
+          last_message_at?: string | null
+          learner_id?: string | null
+          project_id?: string | null
+          status?: string | null
+          unread_count?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          applicant_id?: string | null
+          created_at?: string | null
+          employer_id?: string | null
+          id?: string
+          last_message?: string | null
+          last_message_at?: string | null
+          learner_id?: string | null
+          project_id?: string | null
+          status?: string | null
+          unread_count?: number | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "applications_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       educator_profiles: {
         Row: {
           id: string
@@ -84,6 +134,51 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      employers: {
+        Row: {
+          company_name: string | null
+          company_size: string | null
+          description: string | null
+          id: string
+          industry: string | null
+          location: string | null
+          logo_url: string | null
+          primary_contact_email: string | null
+          primary_contact_name: string | null
+          primary_contact_phone: string | null
+          user_id: string | null
+          website: string | null
+        }
+        Insert: {
+          company_name?: string | null
+          company_size?: string | null
+          description?: string | null
+          id?: string
+          industry?: string | null
+          location?: string | null
+          logo_url?: string | null
+          primary_contact_email?: string | null
+          primary_contact_name?: string | null
+          primary_contact_phone?: string | null
+          user_id?: string | null
+          website?: string | null
+        }
+        Update: {
+          company_name?: string | null
+          company_size?: string | null
+          description?: string | null
+          id?: string
+          industry?: string | null
+          location?: string | null
+          logo_url?: string | null
+          primary_contact_email?: string | null
+          primary_contact_name?: string | null
+          primary_contact_phone?: string | null
+          user_id?: string | null
+          website?: string | null
+        }
+        Relationships: []
       }
       experiences: {
         Row: {
@@ -262,6 +357,90 @@ export type Database = {
           },
         ]
       }
+      participant_settings: {
+        Row: {
+          appearance_settings: Json | null
+          created_at: string | null
+          digest_settings: Json | null
+          id: string
+          language_preference: string | null
+          mentorship_mode: string | null
+          notification_preferences: Json | null
+          participant_id: string | null
+          privacy_settings: Json | null
+          security_settings: Json | null
+          timezone: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          appearance_settings?: Json | null
+          created_at?: string | null
+          digest_settings?: Json | null
+          id?: string
+          language_preference?: string | null
+          mentorship_mode?: string | null
+          notification_preferences?: Json | null
+          participant_id?: string | null
+          privacy_settings?: Json | null
+          security_settings?: Json | null
+          timezone?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          appearance_settings?: Json | null
+          created_at?: string | null
+          digest_settings?: Json | null
+          id?: string
+          language_preference?: string | null
+          mentorship_mode?: string | null
+          notification_preferences?: Json | null
+          participant_id?: string | null
+          privacy_settings?: Json | null
+          security_settings?: Json | null
+          timezone?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          email: string
+          id: string
+          name: string
+          phone: string | null
+          preferred_contact: string | null
+          role: string
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email: string
+          id: string
+          name: string
+          phone?: string | null
+          preferred_contact?: string | null
+          role: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          name?: string
+          phone?: string | null
+          preferred_contact?: string | null
+          role?: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       projects: {
         Row: {
           description: string | null
@@ -290,6 +469,47 @@ export type Database = {
             columns: ["employer_id"]
             isOneToOne: false
             referencedRelation: "employer_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      task_submissions: {
+        Row: {
+          content: string | null
+          feedback: string | null
+          grade: string | null
+          id: string
+          status: string | null
+          submitted_at: string | null
+          task_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          content?: string | null
+          feedback?: string | null
+          grade?: string | null
+          id?: string
+          status?: string | null
+          submitted_at?: string | null
+          task_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          content?: string | null
+          feedback?: string | null
+          grade?: string | null
+          id?: string
+          status?: string | null
+          submitted_at?: string | null
+          task_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "task_submissions_task_id_fkey"
+            columns: ["task_id"]
+            isOneToOne: false
+            referencedRelation: "tasks"
             referencedColumns: ["id"]
           },
         ]
@@ -325,6 +545,39 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      user_message_settings: {
+        Row: {
+          dark_mode: boolean | null
+          desktop_notifications: boolean | null
+          email_notifications: boolean | null
+          id: string
+          message_preview: boolean | null
+          sound_notifications: boolean | null
+          typing_preview: boolean | null
+          user_id: string | null
+        }
+        Insert: {
+          dark_mode?: boolean | null
+          desktop_notifications?: boolean | null
+          email_notifications?: boolean | null
+          id?: string
+          message_preview?: boolean | null
+          sound_notifications?: boolean | null
+          typing_preview?: boolean | null
+          user_id?: string | null
+        }
+        Update: {
+          dark_mode?: boolean | null
+          desktop_notifications?: boolean | null
+          email_notifications?: boolean | null
+          id?: string
+          message_preview?: boolean | null
+          sound_notifications?: boolean | null
+          typing_preview?: boolean | null
+          user_id?: string | null
+        }
+        Relationships: []
       }
       users: {
         Row: {
