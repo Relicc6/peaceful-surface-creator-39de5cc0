@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +8,80 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import DebugAccount from "./pages/DebugAccount";
+import Login from "./pages/Login";
+
+// Placeholder components for routes that haven't been implemented yet
+const PlaceholderPage = ({ name }: { name: string }) => (
+  <div className="container mx-auto p-8 flex items-center justify-center min-h-screen">
+    <div className="text-center">
+      <h1 className="text-2xl font-bold mb-4">This page is under construction</h1>
+      <p className="text-lg mb-6">The <span className="font-semibold">{name}</span> page is coming soon!</p>
+    </div>
+  </div>
+);
+
+// Placeholder components for missing pages
+const CareerPathways = () => <PlaceholderPage name="Career Pathways" />;
+const EmployerRegistration = () => <PlaceholderPage name="Employer Registration" />;
+const EducatorRegistration = () => <PlaceholderPage name="Educator Registration" />;
+const ParticipantRegistration = () => <PlaceholderPage name="Participant Registration" />;
+const LandingPage = () => <PlaceholderPage name="Landing Page" />;
+const Index = () => <PlaceholderPage name="Index" />;
+const EducatorLanding = () => <PlaceholderPage name="Educator Landing" />;
+const EmployerLanding = () => <PlaceholderPage name="Employer Landing" />;
+const ParticipantLanding = () => <PlaceholderPage name="Participant Landing" />;
+const Unauthorized = () => <PlaceholderPage name="Unauthorized" />;
+
+// Educator pages
+const EducatorLayout = () => <PlaceholderPage name="Educator Layout" />;
+const EducatorDashboard = () => <PlaceholderPage name="Educator Dashboard" />;
+const ExperienceManagement = () => <PlaceholderPage name="Experience Management" />;
+const CollaborationManagement = () => <PlaceholderPage name="Collaboration Management" />;
+const PortalSearch = () => <PlaceholderPage name="Portal Search" />;
+const ProjectSearch = () => <PlaceholderPage name="Project Search" />;
+const EducatorProjectDetails = () => <PlaceholderPage name="Educator Project Details" />;
+const StudentManagement = () => <PlaceholderPage name="Student Management" />;
+const MatchRequests = () => <PlaceholderPage name="Match Requests" />;
+const TasksActivities = () => <PlaceholderPage name="Tasks & Activities" />;
+const EducatorMessages = () => <PlaceholderPage name="Educator Messages" />;
+const EducatorCalendar = () => <PlaceholderPage name="Educator Calendar" />;
+const EducatorSettings = () => <PlaceholderPage name="Educator Settings" />;
+const CreateExperience = () => <PlaceholderPage name="Create Experience" />;
+const NotificationsPage = () => <PlaceholderPage name="Notifications" />;
+
+// Participant pages
+const ParticipantLayout = () => <PlaceholderPage name="Participant Layout" />;
+const ParticipantDashboard = () => <PlaceholderPage name="Participant Dashboard" />;
+const ParticipantExperiences = () => <PlaceholderPage name="Participant Experiences" />;
+const CreateParticipantExperience = () => <PlaceholderPage name="Create Participant Experience" />;
+const MyMentors = () => <PlaceholderPage name="My Mentors" />;
+const Messages = () => <PlaceholderPage name="Messages" />;
+const Profile = () => <PlaceholderPage name="Profile" />;
+const ParticipantSettings = () => <PlaceholderPage name="Participant Settings" />;
+
+// Employer pages
+const EmployerLayout = () => <PlaceholderPage name="Employer Layout" />;
+const EmployerDashboard = () => <PlaceholderPage name="Employer Dashboard" />;
+const EmployerProjectManagement = () => <PlaceholderPage name="Employer Project Management" />;
+const ApplicationsManagement = () => <PlaceholderPage name="Applications Management" />;
+const MessagesPage = () => <PlaceholderPage name="Messages Page" />;
+const ResourceCenter = () => <PlaceholderPage name="Resource Center" />;
+const ProfileSettings = () => <PlaceholderPage name="Profile Settings" />;
+const CreateProject = () => <PlaceholderPage name="Create Project" />;
+const ProjectDetails = () => <PlaceholderPage name="Project Details" />;
+
+// Admin pages
+const AdminLayout = () => <PlaceholderPage name="Admin Layout" />;
+const AdminDashboard = () => <PlaceholderPage name="Admin Dashboard" />;
+const UserManagement = () => <PlaceholderPage name="User Management" />;
+const ExperienceOversight = () => <PlaceholderPage name="Experience Oversight" />;
+const AdminProjectManagement = () => <PlaceholderPage name="Admin Project Management" />;
+const AdminMessages = () => <PlaceholderPage name="Admin Messages" />;
+const Reports = () => <PlaceholderPage name="Reports" />;
+const AdminSettings = () => <PlaceholderPage name="Admin Settings" />;
+const AdminNotifications = () => <PlaceholderPage name="Admin Notifications" />;
+const AdminProfile = () => <PlaceholderPage name="Admin Profile" />;
+const NotFound = () => <PlaceholderPage name="Not Found" />;
 
 const queryClient = new QueryClient();
 
