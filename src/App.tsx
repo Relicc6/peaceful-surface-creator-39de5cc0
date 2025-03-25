@@ -7,81 +7,60 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import DebugAccount from "./pages/DebugAccount";
+import NotificationsPage from "@/pages/participant/NotificationsPage";
+import AdminNotifications from "@/pages/admin/AdminNotifications";
+import AdminProfile from "@/pages/admin/AdminProfile";
+import Index from "./pages/Index";
+import LandingPage from "./pages/LandingPage";
+import EducatorLanding from "./pages/EducatorLanding";
+import EmployerLanding from "./pages/EmployerLanding";
+import ParticipantLanding from "./pages/ParticipantLanding";
 import Login from "./pages/Login";
-
-// Placeholder components for routes that haven't been implemented yet
-const PlaceholderPage = ({ name }: { name: string }) => (
-  <div className="container mx-auto p-8 flex items-center justify-center min-h-screen">
-    <div className="text-center">
-      <h1 className="text-2xl font-bold mb-4">This page is under construction</h1>
-      <p className="text-lg mb-6">The <span className="font-semibold">{name}</span> page is coming soon!</p>
-    </div>
-  </div>
-);
-
-// Placeholder components for missing pages
-const CareerPathways = () => <PlaceholderPage name="Career Pathways" />;
-const EmployerRegistration = () => <PlaceholderPage name="Employer Registration" />;
-const EducatorRegistration = () => <PlaceholderPage name="Educator Registration" />;
-const ParticipantRegistration = () => <PlaceholderPage name="Participant Registration" />;
-const LandingPage = () => <PlaceholderPage name="Landing Page" />;
-const Index = () => <PlaceholderPage name="Index" />;
-const EducatorLanding = () => <PlaceholderPage name="Educator Landing" />;
-const EmployerLanding = () => <PlaceholderPage name="Employer Landing" />;
-const ParticipantLanding = () => <PlaceholderPage name="Participant Landing" />;
-const Unauthorized = () => <PlaceholderPage name="Unauthorized" />;
-
-// Educator pages
-const EducatorLayout = () => <PlaceholderPage name="Educator Layout" />;
-const EducatorDashboard = () => <PlaceholderPage name="Educator Dashboard" />;
-const ExperienceManagement = () => <PlaceholderPage name="Experience Management" />;
-const CollaborationManagement = () => <PlaceholderPage name="Collaboration Management" />;
-const PortalSearch = () => <PlaceholderPage name="Portal Search" />;
-const ProjectSearch = () => <PlaceholderPage name="Project Search" />;
-const EducatorProjectDetails = () => <PlaceholderPage name="Educator Project Details" />;
-const StudentManagement = () => <PlaceholderPage name="Student Management" />;
-const MatchRequests = () => <PlaceholderPage name="Match Requests" />;
-const TasksActivities = () => <PlaceholderPage name="Tasks & Activities" />;
-const EducatorMessages = () => <PlaceholderPage name="Educator Messages" />;
-const EducatorCalendar = () => <PlaceholderPage name="Educator Calendar" />;
-const EducatorSettings = () => <PlaceholderPage name="Educator Settings" />;
-const CreateExperience = () => <PlaceholderPage name="Create Experience" />;
-const NotificationsPage = () => <PlaceholderPage name="Notifications" />;
-
-// Participant pages
-const ParticipantLayout = () => <PlaceholderPage name="Participant Layout" />;
-const ParticipantDashboard = () => <PlaceholderPage name="Participant Dashboard" />;
-const ParticipantExperiences = () => <PlaceholderPage name="Participant Experiences" />;
-const CreateParticipantExperience = () => <PlaceholderPage name="Create Participant Experience" />;
-const MyMentors = () => <PlaceholderPage name="My Mentors" />;
-const Messages = () => <PlaceholderPage name="Messages" />;
-const Profile = () => <PlaceholderPage name="Profile" />;
-const ParticipantSettings = () => <PlaceholderPage name="Participant Settings" />;
-
-// Employer pages
-const EmployerLayout = () => <PlaceholderPage name="Employer Layout" />;
-const EmployerDashboard = () => <PlaceholderPage name="Employer Dashboard" />;
-const EmployerProjectManagement = () => <PlaceholderPage name="Employer Project Management" />;
-const ApplicationsManagement = () => <PlaceholderPage name="Applications Management" />;
-const MessagesPage = () => <PlaceholderPage name="Messages Page" />;
-const ResourceCenter = () => <PlaceholderPage name="Resource Center" />;
-const ProfileSettings = () => <PlaceholderPage name="Profile Settings" />;
-const CreateProject = () => <PlaceholderPage name="Create Project" />;
-const ProjectDetails = () => <PlaceholderPage name="Project Details" />;
-
-// Admin pages
-const AdminLayout = () => <PlaceholderPage name="Admin Layout" />;
-const AdminDashboard = () => <PlaceholderPage name="Admin Dashboard" />;
-const UserManagement = () => <PlaceholderPage name="User Management" />;
-const ExperienceOversight = () => <PlaceholderPage name="Experience Oversight" />;
-const AdminProjectManagement = () => <PlaceholderPage name="Admin Project Management" />;
-const AdminMessages = () => <PlaceholderPage name="Admin Messages" />;
-const Reports = () => <PlaceholderPage name="Reports" />;
-const AdminSettings = () => <PlaceholderPage name="Admin Settings" />;
-const AdminNotifications = () => <PlaceholderPage name="Admin Notifications" />;
-const AdminProfile = () => <PlaceholderPage name="Admin Profile" />;
-const NotFound = () => <PlaceholderPage name="Not Found" />;
+import Unauthorized from "./pages/Unauthorized";
+import NotFound from "./pages/NotFound";
+import EducatorRegistration from "./pages/educator/EducatorRegistration";
+import Reports from "./pages/admin/Reports";
+import EmployerRegistration from "./pages/employer/EmployerRegistration";
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import UserManagement from "./pages/admin/UserManagement";
+import ExperienceOversight from "./pages/admin/ExperienceOversight";
+import AdminSettings from "./pages/admin/AdminSettings";
+import AdminMessages from "./pages/admin/AdminMessages";
+import { default as AdminProjectManagement } from "./pages/admin/ProjectManagement";
+import EmployerLayout from "./pages/employer/EmployerLayout";
+import EmployerDashboard from "./pages/employer/EmployerDashboard";
+import { default as EmployerProjectManagement } from "./pages/employer/ProjectManagement";
+import ApplicationsManagement from "./pages/employer/ApplicationsManagement";
+import MessagesPage from "./pages/employer/MessagesPage";
+import ResourceCenter from "./pages/employer/ResourceCenter";
+import ProfileSettings from "./pages/employer/ProfileSettings";
+import CreateProject from "./pages/employer/CreateProject";
+import ProjectDetails from "./pages/employer/ProjectDetails";
+import EducatorLayout from "./pages/educator/EducatorLayout";
+import EducatorDashboard from "./pages/educator/EducatorDashboard";
+import ExperienceManagement from "./pages/educator/ExperienceManagement";
+import CollaborationManagement from "./pages/educator/CollaborationManagement";
+import PortalSearch from "./pages/educator/PortalSearch";
+import ProjectSearch from "./pages/educator/ProjectSearch";
+import EducatorProjectDetails from "./pages/educator/EducatorProjectDetails";
+import StudentManagement from "./pages/educator/StudentManagement";
+import MatchRequests from "./pages/educator/MatchRequests";
+import TasksActivities from "./pages/educator/TasksActivities";
+import EducatorCalendar from "./pages/educator/EducatorCalendar";
+import EducatorSettings from "./pages/educator/EducatorSettings";
+import CreateExperience from "./pages/educator/CreateExperience";
+import ParticipantLayout from "./pages/participant/ParticipantLayout";
+import ParticipantDashboard from "./pages/participant/ParticipantDashboard";
+import ParticipantRegistration from "./pages/participant/ParticipantRegistration";
+import ParticipantExperiences from "./pages/participant/experiences/ParticipantExperiences";
+import MyMentors from "./pages/participant/MyMentors";
+import Profile from "./pages/participant/Profile";
+import CreateParticipantExperience from "./pages/participant/experiences/CreateParticipantExperience";
+import ParticipantSettings from "./pages/participant/settings/ParticipantSettings";
+import Messages from "./pages/participant/Messages";
+import EducatorMessages from "./pages/educator/EducatorMessages";
+import CareerPathways from "./pages/CareerPathways";
 
 const queryClient = new QueryClient();
 
@@ -95,7 +74,6 @@ const App = () => (
           <Route path="/employer/registration" element={<EmployerRegistration />} />
           <Route path="/educator/registration" element={<EducatorRegistration />} />
           <Route path="/participant/registration" element={<ParticipantRegistration />} />
-          <Route path="/debug/account" element={<DebugAccount />} />
           
           {/* Routes that need auth context */}
           <Route

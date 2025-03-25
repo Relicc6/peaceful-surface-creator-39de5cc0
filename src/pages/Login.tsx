@@ -8,8 +8,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { UserRole } from "@/types/auth";
 import { useAuth } from "@/contexts/AuthContext";
-import { Button } from "@/components/ui/button";
-import { Users } from "lucide-react";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -84,16 +82,6 @@ const Login = () => {
             isLoading={isLoading}
             gradient="bg-gradient-to-br from-primary/5 to-secondary/5"
           />
-          
-          {/* Debug link - remove in production */}
-          <div className="mt-6 text-center">
-            <Link to="/debug/account">
-              <Button variant="outline" size="sm" className="text-xs">
-                <Users className="h-3 w-3 mr-1" />
-                Debug Account Creation
-              </Button>
-            </Link>
-          </div>
         </div>
       </main>
       <Footer />
@@ -102,3 +90,4 @@ const Login = () => {
 };
 
 export default Login;
+
