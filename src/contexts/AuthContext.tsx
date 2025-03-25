@@ -17,7 +17,7 @@ export const useAuth = () => {
 
 export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { user, isLoading, setIsLoading } = useAuthState();
-  const { login, logout } = useAuthOperations(setIsLoading);
+  const { login, logout, signup } = useAuthOperations(setIsLoading);
   const mounted = useRef(true);
   const loggedOnce = useRef(false);
 
@@ -34,6 +34,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     user,
     login,
     logout,
+    signup,
     isLoading
   };
 

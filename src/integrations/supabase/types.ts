@@ -9,203 +9,6 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      applications: {
-        Row: {
-          applicant_id: string | null
-          created_at: string | null
-          employer_id: string | null
-          id: string
-          last_message: string | null
-          last_message_at: string | null
-          learner_id: string | null
-          project_id: string | null
-          status: string | null
-          unread_count: number | null
-          updated_at: string | null
-        }
-        Insert: {
-          applicant_id?: string | null
-          created_at?: string | null
-          employer_id?: string | null
-          id?: string
-          last_message?: string | null
-          last_message_at?: string | null
-          learner_id?: string | null
-          project_id?: string | null
-          status?: string | null
-          unread_count?: number | null
-          updated_at?: string | null
-        }
-        Update: {
-          applicant_id?: string | null
-          created_at?: string | null
-          employer_id?: string | null
-          id?: string
-          last_message?: string | null
-          last_message_at?: string | null
-          learner_id?: string | null
-          project_id?: string | null
-          status?: string | null
-          unread_count?: number | null
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "applications_project_id_fkey"
-            columns: ["project_id"]
-            isOneToOne: false
-            referencedRelation: "projects"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      educator_employer_collaborations: {
-        Row: {
-          created_at: string | null
-          educator_id: string | null
-          employer_id: string | null
-          id: string
-          status: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          educator_id?: string | null
-          employer_id?: string | null
-          id?: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          educator_id?: string | null
-          employer_id?: string | null
-          id?: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      educator_events: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          educator_id: string | null
-          event_date: string | null
-          event_type: string | null
-          id: string
-          location: string | null
-          title: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          educator_id?: string | null
-          event_date?: string | null
-          event_type?: string | null
-          id?: string
-          location?: string | null
-          title: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          educator_id?: string | null
-          event_date?: string | null
-          event_type?: string | null
-          id?: string
-          location?: string | null
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      educator_experiences: {
-        Row: {
-          company_types: string[] | null
-          created_at: string | null
-          description: string | null
-          duration_hours: number | null
-          educator_id: string | null
-          expected_outcomes: string[] | null
-          id: string
-          learner_capabilities: string | null
-          learner_level: string | null
-          max_learners: number | null
-          media_urls: string[] | null
-          preferred_companies: Json | null
-          preferred_industries: string[] | null
-          project_examples: string[] | null
-          required_certifications: string[] | null
-          screening_questions: Json | null
-          skill_tags: string[] | null
-          status: string | null
-          subcategories: string[] | null
-          team_size: number | null
-          team_structure: string | null
-          title: string
-          trade_category: string | null
-          updated_at: string | null
-          video_url: string | null
-        }
-        Insert: {
-          company_types?: string[] | null
-          created_at?: string | null
-          description?: string | null
-          duration_hours?: number | null
-          educator_id?: string | null
-          expected_outcomes?: string[] | null
-          id?: string
-          learner_capabilities?: string | null
-          learner_level?: string | null
-          max_learners?: number | null
-          media_urls?: string[] | null
-          preferred_companies?: Json | null
-          preferred_industries?: string[] | null
-          project_examples?: string[] | null
-          required_certifications?: string[] | null
-          screening_questions?: Json | null
-          skill_tags?: string[] | null
-          status?: string | null
-          subcategories?: string[] | null
-          team_size?: number | null
-          team_structure?: string | null
-          title: string
-          trade_category?: string | null
-          updated_at?: string | null
-          video_url?: string | null
-        }
-        Update: {
-          company_types?: string[] | null
-          created_at?: string | null
-          description?: string | null
-          duration_hours?: number | null
-          educator_id?: string | null
-          expected_outcomes?: string[] | null
-          id?: string
-          learner_capabilities?: string | null
-          learner_level?: string | null
-          max_learners?: number | null
-          media_urls?: string[] | null
-          preferred_companies?: Json | null
-          preferred_industries?: string[] | null
-          project_examples?: string[] | null
-          required_certifications?: string[] | null
-          screening_questions?: Json | null
-          skill_tags?: string[] | null
-          status?: string | null
-          subcategories?: string[] | null
-          team_size?: number | null
-          team_structure?: string | null
-          title?: string
-          trade_category?: string | null
-          updated_at?: string | null
-          video_url?: string | null
-        }
-        Relationships: []
-      }
       educator_profiles: {
         Row: {
           id: string
@@ -243,45 +46,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      educator_tasks: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          due_date: string | null
-          educator_id: string | null
-          id: string
-          priority: string | null
-          status: string | null
-          title: string
-          type: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          educator_id?: string | null
-          id?: string
-          priority?: string | null
-          status?: string | null
-          title: string
-          type?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          educator_id?: string | null
-          id?: string
-          priority?: string | null
-          status?: string | null
-          title?: string
-          type?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
       }
       employer_profiles: {
         Row: {
@@ -321,183 +85,6 @@ export type Database = {
           },
         ]
       }
-      employers: {
-        Row: {
-          company_name: string | null
-          company_size: string | null
-          description: string | null
-          id: string
-          industry: string | null
-          location: string | null
-          logo_url: string | null
-          primary_contact_email: string | null
-          primary_contact_name: string | null
-          primary_contact_phone: string | null
-          user_id: string | null
-          website: string | null
-        }
-        Insert: {
-          company_name?: string | null
-          company_size?: string | null
-          description?: string | null
-          id?: string
-          industry?: string | null
-          location?: string | null
-          logo_url?: string | null
-          primary_contact_email?: string | null
-          primary_contact_name?: string | null
-          primary_contact_phone?: string | null
-          user_id?: string | null
-          website?: string | null
-        }
-        Update: {
-          company_name?: string | null
-          company_size?: string | null
-          description?: string | null
-          id?: string
-          industry?: string | null
-          location?: string | null
-          logo_url?: string | null
-          primary_contact_email?: string | null
-          primary_contact_name?: string | null
-          primary_contact_phone?: string | null
-          user_id?: string | null
-          website?: string | null
-        }
-        Relationships: []
-      }
-      experience_feedback: {
-        Row: {
-          comment: string | null
-          created_at: string | null
-          experience_id: string | null
-          id: string
-          rating: number | null
-          reviewer_profile_id: string | null
-        }
-        Insert: {
-          comment?: string | null
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          rating?: number | null
-          reviewer_profile_id?: string | null
-        }
-        Update: {
-          comment?: string | null
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          rating?: number | null
-          reviewer_profile_id?: string | null
-        }
-        Relationships: []
-      }
-      experience_milestones: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          due_date: string | null
-          id: string
-          participant_experience_id: string | null
-          status: string | null
-          title: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          id?: string
-          participant_experience_id?: string | null
-          status?: string | null
-          title: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          id?: string
-          participant_experience_id?: string | null
-          status?: string | null
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      experience_screening_questions: {
-        Row: {
-          created_at: string | null
-          experience_id: string | null
-          id: string
-          options: string[] | null
-          question: string
-          question_type: string | null
-          required: boolean | null
-        }
-        Insert: {
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          options?: string[] | null
-          question: string
-          question_type?: string | null
-          required?: boolean | null
-        }
-        Update: {
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          options?: string[] | null
-          question?: string
-          question_type?: string | null
-          required?: boolean | null
-        }
-        Relationships: []
-      }
-      experience_templates: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          educator_id: string | null
-          id: string
-          is_public: boolean | null
-          metadata: Json | null
-          skill_level: string | null
-          status: string | null
-          title: string
-          trade_type: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          educator_id?: string | null
-          id?: string
-          is_public?: boolean | null
-          metadata?: Json | null
-          skill_level?: string | null
-          status?: string | null
-          title: string
-          trade_type?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          educator_id?: string | null
-          id?: string
-          is_public?: boolean | null
-          metadata?: Json | null
-          skill_level?: string | null
-          status?: string | null
-          title?: string
-          trade_type?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
       experiences: {
         Row: {
           end_date: string | null
@@ -535,51 +122,24 @@ export type Database = {
       }
       messages: {
         Row: {
-          application_id: string | null
-          attachments: Json | null
           content: string | null
-          created_at: string | null
-          edited_at: string | null
           id: string
-          is_edited: boolean | null
-          is_pinned: boolean | null
-          reactions: Json | null
-          read_at: string | null
           receiver_id: string | null
           sender_id: string | null
-          thread_id: string | null
           timestamp: string | null
         }
         Insert: {
-          application_id?: string | null
-          attachments?: Json | null
           content?: string | null
-          created_at?: string | null
-          edited_at?: string | null
           id: string
-          is_edited?: boolean | null
-          is_pinned?: boolean | null
-          reactions?: Json | null
-          read_at?: string | null
           receiver_id?: string | null
           sender_id?: string | null
-          thread_id?: string | null
           timestamp?: string | null
         }
         Update: {
-          application_id?: string | null
-          attachments?: Json | null
           content?: string | null
-          created_at?: string | null
-          edited_at?: string | null
           id?: string
-          is_edited?: boolean | null
-          is_pinned?: boolean | null
-          reactions?: Json | null
-          read_at?: string | null
           receiver_id?: string | null
           sender_id?: string | null
-          thread_id?: string | null
           timestamp?: string | null
         }
         Relationships: [
@@ -601,48 +161,24 @@ export type Database = {
       }
       notifications: {
         Row: {
-          content: string | null
-          created_at: string | null
-          experience_id: string | null
           id: string
           message: string | null
-          priority: string | null
-          read: boolean | null
-          read_at: string | null
           status: string | null
           timestamp: string | null
-          title: string | null
-          type: string | null
           user_id: string | null
         }
         Insert: {
-          content?: string | null
-          created_at?: string | null
-          experience_id?: string | null
           id: string
           message?: string | null
-          priority?: string | null
-          read?: boolean | null
-          read_at?: string | null
           status?: string | null
           timestamp?: string | null
-          title?: string | null
-          type?: string | null
           user_id?: string | null
         }
         Update: {
-          content?: string | null
-          created_at?: string | null
-          experience_id?: string | null
           id?: string
           message?: string | null
-          priority?: string | null
-          read?: boolean | null
-          read_at?: string | null
           status?: string | null
           timestamp?: string | null
-          title?: string | null
-          type?: string | null
           user_id?: string | null
         }
         Relationships: [
@@ -654,150 +190,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      participant_achievements: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          id: string
-          issued_at: string | null
-          participant_id: string | null
-          title: string
-          type: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          id?: string
-          issued_at?: string | null
-          participant_id?: string | null
-          title: string
-          type?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          id?: string
-          issued_at?: string | null
-          participant_id?: string | null
-          title?: string
-          type?: string | null
-        }
-        Relationships: []
-      }
-      participant_events: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          event_type: string | null
-          id: string
-          participant_id: string | null
-          start_time: string | null
-          title: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          event_type?: string | null
-          id?: string
-          participant_id?: string | null
-          start_time?: string | null
-          title: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          event_type?: string | null
-          id?: string
-          participant_id?: string | null
-          start_time?: string | null
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      participant_experiences: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          duration_hours: number | null
-          educator_profile_id: string | null
-          end_date: string | null
-          expected_outcomes: string[] | null
-          id: string
-          learner_capabilities: string | null
-          learner_level: string | null
-          max_learners: number | null
-          media_urls: string[] | null
-          participant_id: string | null
-          preferred_companies: Json | null
-          project_examples: string[] | null
-          skill_tags: string[] | null
-          start_date: string | null
-          status: string | null
-          subcategories: string[] | null
-          team_size: number | null
-          team_structure: string | null
-          title: string
-          trade_category: string | null
-          updated_at: string | null
-          video_url: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          duration_hours?: number | null
-          educator_profile_id?: string | null
-          end_date?: string | null
-          expected_outcomes?: string[] | null
-          id?: string
-          learner_capabilities?: string | null
-          learner_level?: string | null
-          max_learners?: number | null
-          media_urls?: string[] | null
-          participant_id?: string | null
-          preferred_companies?: Json | null
-          project_examples?: string[] | null
-          skill_tags?: string[] | null
-          start_date?: string | null
-          status?: string | null
-          subcategories?: string[] | null
-          team_size?: number | null
-          team_structure?: string | null
-          title: string
-          trade_category?: string | null
-          updated_at?: string | null
-          video_url?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          duration_hours?: number | null
-          educator_profile_id?: string | null
-          end_date?: string | null
-          expected_outcomes?: string[] | null
-          id?: string
-          learner_capabilities?: string | null
-          learner_level?: string | null
-          max_learners?: number | null
-          media_urls?: string[] | null
-          participant_id?: string | null
-          preferred_companies?: Json | null
-          project_examples?: string[] | null
-          skill_tags?: string[] | null
-          start_date?: string | null
-          status?: string | null
-          subcategories?: string[] | null
-          team_size?: number | null
-          team_structure?: string | null
-          title?: string
-          trade_category?: string | null
-          updated_at?: string | null
-          video_url?: string | null
-        }
-        Relationships: []
       }
       participant_profiles: {
         Row: {
@@ -870,261 +262,27 @@ export type Database = {
           },
         ]
       }
-      participant_recommendations: {
-        Row: {
-          created_at: string | null
-          experience_id: string | null
-          id: string
-          match_score: number | null
-          participant_id: string | null
-          status: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          match_score?: number | null
-          participant_id?: string | null
-          status?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          experience_id?: string | null
-          id?: string
-          match_score?: number | null
-          participant_id?: string | null
-          status?: string | null
-        }
-        Relationships: []
-      }
-      participant_settings: {
-        Row: {
-          appearance_settings: Json | null
-          created_at: string | null
-          digest_settings: Json | null
-          id: string
-          language_preference: string | null
-          mentorship_mode: string | null
-          notification_preferences: Json | null
-          participant_id: string | null
-          privacy_settings: Json | null
-          security_settings: Json | null
-          timezone: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          appearance_settings?: Json | null
-          created_at?: string | null
-          digest_settings?: Json | null
-          id?: string
-          language_preference?: string | null
-          mentorship_mode?: string | null
-          notification_preferences?: Json | null
-          participant_id?: string | null
-          privacy_settings?: Json | null
-          security_settings?: Json | null
-          timezone?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          appearance_settings?: Json | null
-          created_at?: string | null
-          digest_settings?: Json | null
-          id?: string
-          language_preference?: string | null
-          mentorship_mode?: string | null
-          notification_preferences?: Json | null
-          participant_id?: string | null
-          privacy_settings?: Json | null
-          security_settings?: Json | null
-          timezone?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      participant_tasks: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          due_date: string | null
-          id: string
-          participant_id: string | null
-          priority: string | null
-          status: string | null
-          title: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          id?: string
-          participant_id?: string | null
-          priority?: string | null
-          status?: string | null
-          title: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          due_date?: string | null
-          id?: string
-          participant_id?: string | null
-          priority?: string | null
-          status?: string | null
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      participant_workflow_status: {
-        Row: {
-          created_at: string | null
-          id: string
-          last_status_change: string | null
-          needs_admin_review: boolean | null
-          onboarding_step: string | null
-          participant_id: string | null
-          profile_completion: number | null
-          registration_status: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          last_status_change?: string | null
-          needs_admin_review?: boolean | null
-          onboarding_step?: string | null
-          participant_id?: string | null
-          profile_completion?: number | null
-          registration_status?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          last_status_change?: string | null
-          needs_admin_review?: boolean | null
-          onboarding_step?: string | null
-          participant_id?: string | null
-          profile_completion?: number | null
-          registration_status?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          created_at: string | null
-          email: string
-          id: string
-          name: string
-          phone: string | null
-          preferred_contact: string | null
-          role: string
-          status: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          avatar_url?: string | null
-          created_at?: string | null
-          email: string
-          id: string
-          name: string
-          phone?: string | null
-          preferred_contact?: string | null
-          role: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          avatar_url?: string | null
-          created_at?: string | null
-          email?: string
-          id?: string
-          name?: string
-          phone?: string | null
-          preferred_contact?: string | null
-          role?: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
       projects: {
         Row: {
-          additional_feedback: string | null
-          certifications_required: string[] | null
-          created_at: string | null
           description: string | null
           employer_id: string | null
-          end_date: string | null
-          expectations: string | null
           id: string
-          location_type: string | null
-          positions: number | null
-          required_tools: string[] | null
-          review_status: string | null
-          safety_requirements: string[] | null
-          site_address: string | null
-          skill_level: string | null
-          start_date: string | null
           status: string | null
-          subcategories: string[] | null
           title: string | null
-          tools_provided: boolean | null
-          trade_type: string | null
-          updated_at: string | null
         }
         Insert: {
-          additional_feedback?: string | null
-          certifications_required?: string[] | null
-          created_at?: string | null
           description?: string | null
           employer_id?: string | null
-          end_date?: string | null
-          expectations?: string | null
           id: string
-          location_type?: string | null
-          positions?: number | null
-          required_tools?: string[] | null
-          review_status?: string | null
-          safety_requirements?: string[] | null
-          site_address?: string | null
-          skill_level?: string | null
-          start_date?: string | null
           status?: string | null
-          subcategories?: string[] | null
           title?: string | null
-          tools_provided?: boolean | null
-          trade_type?: string | null
-          updated_at?: string | null
         }
         Update: {
-          additional_feedback?: string | null
-          certifications_required?: string[] | null
-          created_at?: string | null
           description?: string | null
           employer_id?: string | null
-          end_date?: string | null
-          expectations?: string | null
           id?: string
-          location_type?: string | null
-          positions?: number | null
-          required_tools?: string[] | null
-          review_status?: string | null
-          safety_requirements?: string[] | null
-          site_address?: string | null
-          skill_level?: string | null
-          start_date?: string | null
           status?: string | null
-          subcategories?: string[] | null
           title?: string | null
-          tools_provided?: boolean | null
-          trade_type?: string | null
-          updated_at?: string | null
         }
         Relationships: [
           {
@@ -1136,98 +294,27 @@ export type Database = {
           },
         ]
       }
-      task_submissions: {
-        Row: {
-          content: string | null
-          feedback: string | null
-          grade: string | null
-          id: string
-          status: string | null
-          submitted_at: string | null
-          task_id: string | null
-          user_id: string | null
-        }
-        Insert: {
-          content?: string | null
-          feedback?: string | null
-          grade?: string | null
-          id?: string
-          status?: string | null
-          submitted_at?: string | null
-          task_id?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          content?: string | null
-          feedback?: string | null
-          grade?: string | null
-          id?: string
-          status?: string | null
-          submitted_at?: string | null
-          task_id?: string | null
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "task_submissions_task_id_fkey"
-            columns: ["task_id"]
-            isOneToOne: false
-            referencedRelation: "tasks"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       tasks: {
         Row: {
-          assigned_by: string | null
-          assigned_to: string | null
-          created_at: string | null
-          created_by: string | null
           description: string | null
-          due_date: string | null
           id: string
-          priority: string | null
           project_id: string | null
           status: string | null
-          submission_requirements: Json | null
-          submission_type: string | null
           title: string | null
-          type: string | null
-          updated_at: string | null
         }
         Insert: {
-          assigned_by?: string | null
-          assigned_to?: string | null
-          created_at?: string | null
-          created_by?: string | null
           description?: string | null
-          due_date?: string | null
           id: string
-          priority?: string | null
           project_id?: string | null
           status?: string | null
-          submission_requirements?: Json | null
-          submission_type?: string | null
           title?: string | null
-          type?: string | null
-          updated_at?: string | null
         }
         Update: {
-          assigned_by?: string | null
-          assigned_to?: string | null
-          created_at?: string | null
-          created_by?: string | null
           description?: string | null
-          due_date?: string | null
           id?: string
-          priority?: string | null
           project_id?: string | null
           status?: string | null
-          submission_requirements?: Json | null
-          submission_type?: string | null
           title?: string | null
-          type?: string | null
-          updated_at?: string | null
         }
         Relationships: [
           {
@@ -1238,39 +325,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      user_message_settings: {
-        Row: {
-          dark_mode: boolean | null
-          desktop_notifications: boolean | null
-          email_notifications: boolean | null
-          id: string
-          message_preview: boolean | null
-          sound_notifications: boolean | null
-          typing_preview: boolean | null
-          user_id: string | null
-        }
-        Insert: {
-          dark_mode?: boolean | null
-          desktop_notifications?: boolean | null
-          email_notifications?: boolean | null
-          id?: string
-          message_preview?: boolean | null
-          sound_notifications?: boolean | null
-          typing_preview?: boolean | null
-          user_id?: string | null
-        }
-        Update: {
-          dark_mode?: boolean | null
-          desktop_notifications?: boolean | null
-          email_notifications?: boolean | null
-          id?: string
-          message_preview?: boolean | null
-          sound_notifications?: boolean | null
-          typing_preview?: boolean | null
-          user_id?: string | null
-        }
-        Relationships: []
       }
       users: {
         Row: {
