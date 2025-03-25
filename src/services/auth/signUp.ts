@@ -24,32 +24,33 @@ export const signUpUser = async (email: string, password: string, role: UserRole
       throw error;
     }
     
-    // Give some time for the trigger to create the user profile
+    // Give some time for the trigger to create the profile
     if (data.user?.id) {
-      console.log("Account created, waiting for user creation");
+      console.log("Account created, waiting for profile creation");
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Verify user exists
-      const { data: user } = await supabase
-        .from('users')
+      // Verify profile exists
+      const { data: profile } = await supabase
+        .from('profiles')
         .select('id')
         .eq('id', data.user.id)
         .maybeSingle();
         
-      if (!user) {
-        console.log("Creating user record manually");
-        const { error: userError } = await supabase
-          .from('users')
+      if (!profile) {
+        console.log("Creating profile manually");
+        const { error: profileError } = await supabase
+          .from('profiles')
           .insert({
             id: data.user.id,
             email: normalizedEmail,
             role: role,
-            full_name: normalizedEmail.split('@')[0], // Set a default name based on email
+            name: normalizedEmail.split('@')[0], // Set a default name based on email
+            status: 'pending' // Default status for new users
           });
           
-        if (userError) {
-          console.error("Error creating user:", userError);
-          throw userError;
+        if (profileError) {
+          console.error("Error creating profile:", profileError);
+          throw profileError;
         }
       }
     }
