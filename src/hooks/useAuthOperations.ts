@@ -1,7 +1,6 @@
-
 import { useToast } from "@/hooks/use-toast";
 import { AuthError } from "@supabase/supabase-js";
-import { signInUser, signOutUser, signUpUser } from "@/services/auth";
+import { signInUser, signOutUser } from "@/services/auth";
 import { User, UserRole } from "@/types/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -80,44 +79,6 @@ export const useAuthOperations = (setIsLoading: (loading: boolean) => void) => {
     }
   };
 
-  const signup = async (email: string, password: string, role: UserRole) => {
-    try {
-      console.log("Attempting signup with email:", email, "and role:", role);
-      setIsLoading(true);
-      
-      const { error: signUpError } = await signUpUser(email, password, role);
-      
-      if (signUpError) {
-        if (signUpError.message.includes("User already registered")) {
-          toast({
-            title: "Account Exists",
-            description: "This email is already registered. Please login instead.",
-            variant: "destructive",
-          });
-          return;
-        }
-        throw signUpError;
-      }
-
-      console.log("Signup successful");
-      toast({
-        title: "Account created!",
-        description: "Please check your email to verify your account.",
-      });
-    } catch (error) {
-      console.error("Signup error:", error);
-      const authError = error as AuthError;
-      toast({
-        title: "Error",
-        description: authError.message || "An error occurred during signup",
-        variant: "destructive",
-      });
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const logout = async () => {
     try {
       console.log("Starting logout process...");
@@ -154,5 +115,5 @@ export const useAuthOperations = (setIsLoading: (loading: boolean) => void) => {
     }
   };
 
-  return { login, signup, logout };
+  return { login, logout };
 };
