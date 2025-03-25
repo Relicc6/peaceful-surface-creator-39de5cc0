@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,60 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import NotificationsPage from "@/pages/participant/NotificationsPage";
-import AdminNotifications from "@/pages/admin/AdminNotifications";
-import AdminProfile from "@/pages/admin/AdminProfile";
-import Index from "./pages/Index";
-import LandingPage from "./pages/LandingPage";
-import EducatorLanding from "./pages/EducatorLanding";
-import EmployerLanding from "./pages/EmployerLanding";
-import ParticipantLanding from "./pages/ParticipantLanding";
-import Login from "./pages/Login";
-import Unauthorized from "./pages/Unauthorized";
-import NotFound from "./pages/NotFound";
-import EducatorRegistration from "./pages/educator/EducatorRegistration";
-import Reports from "./pages/admin/Reports";
-import EmployerRegistration from "./pages/employer/EmployerRegistration";
-import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import UserManagement from "./pages/admin/UserManagement";
-import ExperienceOversight from "./pages/admin/ExperienceOversight";
-import AdminSettings from "./pages/admin/AdminSettings";
-import AdminMessages from "./pages/admin/AdminMessages";
-import { default as AdminProjectManagement } from "./pages/admin/ProjectManagement";
-import EmployerLayout from "./pages/employer/EmployerLayout";
-import EmployerDashboard from "./pages/employer/EmployerDashboard";
-import { default as EmployerProjectManagement } from "./pages/employer/ProjectManagement";
-import ApplicationsManagement from "./pages/employer/ApplicationsManagement";
-import MessagesPage from "./pages/employer/MessagesPage";
-import ResourceCenter from "./pages/employer/ResourceCenter";
-import ProfileSettings from "./pages/employer/ProfileSettings";
-import CreateProject from "./pages/employer/CreateProject";
-import ProjectDetails from "./pages/employer/ProjectDetails";
-import EducatorLayout from "./pages/educator/EducatorLayout";
-import EducatorDashboard from "./pages/educator/EducatorDashboard";
-import ExperienceManagement from "./pages/educator/ExperienceManagement";
-import CollaborationManagement from "./pages/educator/CollaborationManagement";
-import PortalSearch from "./pages/educator/PortalSearch";
-import ProjectSearch from "./pages/educator/ProjectSearch";
-import EducatorProjectDetails from "./pages/educator/EducatorProjectDetails";
-import StudentManagement from "./pages/educator/StudentManagement";
-import MatchRequests from "./pages/educator/MatchRequests";
-import TasksActivities from "./pages/educator/TasksActivities";
-import EducatorCalendar from "./pages/educator/EducatorCalendar";
-import EducatorSettings from "./pages/educator/EducatorSettings";
-import CreateExperience from "./pages/educator/CreateExperience";
-import ParticipantLayout from "./pages/participant/ParticipantLayout";
-import ParticipantDashboard from "./pages/participant/ParticipantDashboard";
-import ParticipantRegistration from "./pages/participant/ParticipantRegistration";
-import ParticipantExperiences from "./pages/participant/experiences/ParticipantExperiences";
-import MyMentors from "./pages/participant/MyMentors";
-import Profile from "./pages/participant/Profile";
-import CreateParticipantExperience from "./pages/participant/experiences/CreateParticipantExperience";
-import ParticipantSettings from "./pages/participant/settings/ParticipantSettings";
-import Messages from "./pages/participant/Messages";
-import EducatorMessages from "./pages/educator/EducatorMessages";
-import CareerPathways from "./pages/CareerPathways";
+import DebugAccount from "./pages/DebugAccount";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +20,7 @@ const App = () => (
           <Route path="/employer/registration" element={<EmployerRegistration />} />
           <Route path="/educator/registration" element={<EducatorRegistration />} />
           <Route path="/participant/registration" element={<ParticipantRegistration />} />
+          <Route path="/debug/account" element={<DebugAccount />} />
           
           {/* Routes that need auth context */}
           <Route
