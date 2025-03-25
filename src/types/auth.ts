@@ -1,29 +1,27 @@
 
-export type UserRole = "admin" | "educator" | "employer" | "participant";
+export type UserRole = "participant" | "educator" | "employer" | "admin";
 
 export interface User {
   id: string;
   email: string;
+  name?: string;
   role: UserRole;
-  name: string;
-  avatar_url?: string;
-  bio?: string;
-  phone?: string;
-  preferred_contact?: string;
-  skill_level?: string;
-  availability?: string;
-  educational_background?: string;
-  preferred_learning_areas?: string[];
-  created_at?: string;
-  updated_at?: string;
-  status?: string;
-  online_status?: boolean;
+  avatar_url?: string | null;
+  bio?: string | null;
+  phone?: string | null;
+  preferred_contact?: string | null;
 }
 
-export interface AuthContextType {
+export interface Session {
+  access_token: string;
+  refresh_token: string;
+  expires_at: number;
+  user: User;
+}
+
+export interface AuthState {
   user: User | null;
-  login: (email: string, password: string) => Promise<User | null>;
-  signup: (email: string, password: string, portal: string) => Promise<void>;
-  logout: () => void;
+  session: Session | null;
   isLoading: boolean;
+  error: string | null;
 }
